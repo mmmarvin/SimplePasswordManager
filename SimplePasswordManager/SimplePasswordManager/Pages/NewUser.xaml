@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<custom:CustomModalFrame xmlns="http://xamarin.com/schemas/2014/forms"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         x:Class="SimplePasswordManager.Pages.NewUser"
+                         xmlns:spm="clr-namespace:SimplePasswordManager"
+                         xmlns:custom="clr-namespace:SimplePasswordManager.Custom">
+    <custom:CustomModalFrame.Children>
+        <Label x:Name="c_TitleLabel" Text="" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" FontSize="Large" FontAttributes="Bold" Margin="0, 0, 0, 10" />
+        <StackLayout Orientation="Horizontal">
+            <Label VerticalOptions="Center" Text="Label:" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" />
+            <Entry x:Name="c_LabelEntry" Text="" HorizontalOptions="FillAndExpand" FontSize="Small" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label VerticalOptions="Center" Text="Username:" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" />
+            <Entry x:Name="c_UsernameEntry" Text="" HorizontalOptions="FillAndExpand" FontSize="Small" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label VerticalOptions="Center" Text="Password:" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" />
+            <Entry x:Name="c_Password1Entry" Text="" HorizontalOptions="FillAndExpand" IsPassword="true" FontSize="Small" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label VerticalOptions="Center" Text="Confirm Password:" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" />
+            <Entry x:Name="c_Password2Entry" Text="" HorizontalOptions="FillAndExpand" IsPassword="true" FontSize="Small" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" />
+        </StackLayout>
+        <custom:PasswordStrengthView x:Name="c_PasswordStrengthView" Margin="0, 5, 0, 10"/>
+        <Button HorizontalOptions="FillAndExpand" Text="Generate Random Password" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" Clicked="Btn_GenerateClicked" FontSize="Small" />
+        <StackLayout Orientation="Horizontal">
+            <Label HorizontalOptions="FillAndExpand" />
+            <Button x:Name="c_AddButton" Text="" TextColor="{x:Static spm:Theme.ACCENT_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.ACCENT_COLOR}" FontSize="Small" />
+            <Button Text="Cancel" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" Clicked="Btn_CancelClicked" FontSize="Small" />
+        </StackLayout>
+    </custom:CustomModalFrame.Children>
+</custom:CustomModalFrame>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePasswordManager.Pages.About"
+             xmlns:spm="clr-namespace:SimplePasswordManager"
+             BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}"
+             Title="About">
+    <ContentPage.Content>
+        <StackLayout Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Label HorizontalOptions="Center" Text="About" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" FontSize="Large" Margin="0, 0, 0, 20"/>
+            <Label Text="{x:Static spm:Constant.APP_NAME_AND_VERSION}" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0, 0, 0, 0" />
+            <Label Text="Developed: Marvin Manese" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0, 0, 0, 20" />
+            <Label Text="Password generator word list is from SCOWL (Spell Checker Oriented Word List) and is filtered using profane-words (https://github.com/zacanger/profane-words)" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0, 0, 0, 20" />
+            <Label Text="Licenses:" TextColor="Black" />
+            <WebView x:Name="c_LicenseView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePasswordManager.Pages.MainPage"
+             xmlns:spm="clr-namespace:SimplePasswordManager"
+             xmlns:custom="clr-namespace:SimplePasswordManager.Custom"
+             BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}">
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <Frame BackgroundColor="{x:Static spm:Theme.ACCENT_COLOR}" HorizontalOptions="FillAndExpand" Padding="10" HeightRequest="74">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                    <Label HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="Simple Password Manager" TextColor="{x:Static spm:Theme.ACCENT_TEXT_COLOR}" FontSize="Title" FontAttributes="Bold" />
+                    <ImageButton x:Name="c_OptionsButton" BackgroundColor="Transparent" VerticalOptions="Center" WidthRequest="64" HeightRequest="64" Padding="20" Clicked="Btn_PopupClicked" />
+                </StackLayout>
+            </Frame>
+            <!--<Frame BackgroundColor="Black" HeightRequest="48" />-->
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" Margin="10, 0, 10, 0">
+                    <Label VerticalOptions="Center" Text="Category:" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" FontSize="Small" />
+                    <custom:CustomPicker VerticalOptions="Center" x:Name="c_CategoryPicker" HorizontalOptions="FillAndExpand" FontSize="Small" SelectedIndexChanged="Picker_CategoryChanged" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" WidthRequest="100" />
+                    <Button VerticalOptions="Center" Text="New" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}"  BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" Clicked="Btn_NewCategoryClicked" FontSize="Small" />
+                    <Button x:Name="c_DeleteCategoryButton" VerticalOptions="Center" Text="Delete" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}"  BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" Clicked="Btn_DeleteCategoryClicked" FontSize="Small" IsEnabled="false" />
+                </StackLayout>
+                <Frame BackgroundColor="{x:Static spm:Theme.BACKGROUND_COLOR}" BorderColor="{x:Static spm:Theme.BACKGROUND_COLOR}" CornerRadius="0" Padding="10" Margin="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Label:" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" Grid.Row="0" Grid.Column="0" FontSize="Small" FontAttributes="Bold" Margin="10, 0, 0, 0" />
+                        <Label Text="Username:" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" Grid.Row="0" Grid.Column="1" FontSize="Small" FontAttributes="Bold" Margin="0, 0, 0, 0" />
+                        <Label Text="Password:" TextColor="{x:Static spm:Theme.BACKGROUND_TEXT_COLOR}" Grid.Row="0" Grid.Column="2" FontSize="Small" FontAttributes="Bold" Margin="0, 0, 10, 0" />
+                    </Grid>
+                </Frame>
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <StackLayout x:Name="c_PasswordList" />
+                </ScrollView>
+            </StackLayout>
+            <Button x:Name="c_AddUserButton" Text="Add New Entry" TextColor="{x:Static spm:Theme.ACCENT_TEXT_COLOR}"  BackgroundColor="{x:Static spm:Theme.ACCENT_COLOR}" Clicked="Btn_AddUserClicked" IsEnabled="false" FontSize="Small" />
+        </StackLayout>
+        <custom:PopupBackground x:Name="c_PopupBackground" IsVisible="false" />
+        <custom:PopupFrame x:Name="c_PopupFrame" VerticalOptions="Center" IsVisible="false" BackgroundColor="{x:Static spm:Theme.ACCENT_COLOR}" Padding="0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1, 0.05, 0.5, 0.25">
+            <StackLayout>
+                <Button Text="Change Master Password" TextColor="{x:Static spm:Theme.ACCENT_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.ACCENT_COLOR}" FontSize="Small" Clicked="Btn_MasterPasswordClicked" />
+                <Button Text="Privacy Policy" TextColor="{x:Static spm:Theme.ACCENT_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.ACCENT_COLOR}" FontSize="Small" Clicked="Btn_PrivacyClicked" />
+                <Button Text="About" TextColor="{x:Static spm:Theme.ACCENT_TEXT_COLOR}" BackgroundColor="{x:Static spm:Theme.ACCENT_COLOR}" FontSize="Small" Clicked="Btn_AboutClicked" />
+            </StackLayout>
+        </custom:PopupFrame>
+    </AbsoluteLayout>
+</ContentPage>
