@@ -4,8 +4,8 @@ A password manager for Android and iOS written in Xamarin.Forms
 
 Screenshots
 ===========================
-![Preview](.readme/screenshot01.png)
-![Preview](.readme/screenshot02.png)
+![Preview](readme/screenshot01.png)
+![Preview](readme/screenshot02.png)
 
 Author
 ===========================
